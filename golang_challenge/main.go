@@ -25,7 +25,7 @@ func main() {
 		}
 	}
 
-	// process list of words
+	// process list of words and print result
 	fmt.Println(findMostCommonWord(args))
 }
 
@@ -35,7 +35,7 @@ func findMostCommonWord(words []string) string {
 	var mostCommonCount1 uint32 // keep track of the count of 1st and 2nd most common words so we know if there is a tie
 	var mostCommonCount2 uint32
 
-	var wordCounts = make(map[string]uint32)
+	wordCounts := make(map[string]uint32)
 
 	for _, word := range words {
 		// check if the map has the word and increment the count if it is already in the map
