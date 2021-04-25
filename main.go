@@ -14,7 +14,7 @@ func main() {
 
 	// verify that arguments are words
 	for i := 0; i < len(args); i++ {
-		matched, err := regexp.Match(`[a-zA-Z]+`, []byte(args[i]))
+		matched, err := regexp.Match(`[\w]+`, []byte(args[i]))
 		if !matched {
 			if err != nil {
 				fmt.Println(err)
