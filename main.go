@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"regexp"
 )
 
 // launching point for this program
@@ -11,19 +10,6 @@ func main() {
 
 	// get arguments skipping program name
 	args := os.Args[1:]
-
-	// verify that arguments are words
-	for i := 0; i < len(args); i++ {
-		matched, err := regexp.Match(`[\w]+`, []byte(args[i]))
-		if !matched {
-			if err != nil {
-				fmt.Println(err)
-			} else {
-				fmt.Println("Not a word: ", args[i])
-			}
-			os.Exit(1)
-		}
-	}
 
 	// process list of words and print result
 	fmt.Println(findMostCommonWord(args))
